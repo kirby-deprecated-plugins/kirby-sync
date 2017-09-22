@@ -11,9 +11,9 @@ c::get('plugin.sync.token', 'token');
 
 ### plugin.sync.hub (required)
 
-If this option is `true` the domain is treated like a hub where the original content is stored. When you save a page in hub mode, it will run a hook that copies the content to all the other domains.
+Your hub domain needs to have this option to `true`. The hub is where your original content is stored.
 
-If this option is not set, the domain will be seen as a node. You need to have one domain that works as a hub.
+For node domains you don't need to set this option. Node domains are the domains where your content is copied to.
 
 **Example**
 
@@ -28,7 +28,7 @@ L node
 
 ### plugin.sync.slug
 
-The slug of the sync API.
+The slug of the sync API. You only need to change this if it collides with something else you have on `yourdomain.com/sync`.
 
 ### plugin.sync.parent
 
