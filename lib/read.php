@@ -50,8 +50,8 @@ class SyncRead {
             $parent_uid = $root . $page_id;
         }
         if(isset($array)) {
-            $content = json_encode($array);
-            return new Response($content, 'html', 200);
+            $json = json_encode($array);
+            return new Response($json, 'json', 200);
         }
     }
 

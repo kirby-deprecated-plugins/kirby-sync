@@ -1,5 +1,5 @@
 <?php
-class syncWrite {
+class SyncWrite {
     function write($type, $id) {
         $page = page($id);
         switch($type) {
@@ -13,7 +13,7 @@ class syncWrite {
     }
 
     function content($id) {
-        $url = u() . '/sync/content/' . $id . '?token=token&method=read';
+        $url = u() . '/sync/content/' . $id . '?token=token&method=read'; // TOKEN!!!
         $content = $this->get($url);
         $this->create($id, $content);
     }
