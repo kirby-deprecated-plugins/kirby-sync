@@ -2,12 +2,21 @@
 
 The following options can be set in your `/site/config/config.php` file:
 
+**Required**
+
 ```php
 c::get('plugin.sync.hub');
+```
+
+**optional**
+
+```php
 c::get('plugin.sync.slug', 'sync');
 c::get('plugin.serp.parent', 'synced-data');
 c::get('plugin.sync.token', 'token');
 ```
+
+## Required
 
 ### plugin.sync.hub (required)
 
@@ -25,6 +34,8 @@ L node
 L node
 L node
 ```
+
+## Optional
 
 ### plugin.sync.slug
 
