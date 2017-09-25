@@ -8,21 +8,22 @@ The following options can be set in your `/site/config/config.php` file:
 c::get('plugin.sync.hub');
 ```
 
-**optional**
+**Optional**
 
 ```php
 c::get('plugin.sync.slug', 'sync');
-c::get('plugin.serp.parent', 'synced-data');
+c::get('plugin.sync.parent', 'synced-data');
 c::get('plugin.sync.token', 'token');
+c::get('plugin.sync.blueprint.empty', 'silence');
 ```
 
 ## Required
 
-### plugin.sync.hub (required)
+### plugin.sync.hub
 
-Your hub domain needs to have this option to `true`. The hub is where your original content is stored.
+The hub is where your original content is stored. The node domains are the domains where your content is copied to.
 
-For node domains you don't need to set this option. Node domains are the domains where your content is copied to.
+On your hub domain this option needs to be `true`. On your node domains, you don't need to set this option.
 
 **Example**
 
@@ -54,3 +55,7 @@ example-hub.com/my/page > example-node.com/synced-data/my/page
 ### plugin.sync.token
 
 To prevent other people to use your sync API you can protect it by a token of your choice.
+
+### plugin.blueprint.empty
+
+By default a blueprint called `silence` is registered used for the parent `synced-data`. When browsing in the Panel it will just display an empty page. With this option you can change this blueprint name if you need to.

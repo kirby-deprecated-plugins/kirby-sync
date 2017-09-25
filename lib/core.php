@@ -1,5 +1,22 @@
 <?php
-class SyncCore {
+namespace KirbySync;
+use c;
+
+class Core {    
+    // Get object
+    function getObject($parent_uid) {
+        if($parent_uid != '')
+            return site()->find($parent_uid);
+        else
+            return site()->pages();
+    }
+
+    // Create page
+    function createPage($object, $page_id, $template, $data) {
+        return $object->children()->create($page_id, $template, $data);
+    }
+
+    // Get remote content
     function getContent($url) {
         $ch = curl_init();  
     

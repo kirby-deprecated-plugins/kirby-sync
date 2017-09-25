@@ -1,2 +1,6 @@
 <?php
-$kirby->set('blueprint', 'silence', __DIR__ . DS . '../' . DS . '/blueprints/silence.yml');
+namespace KirbySync;
+
+$Option = new Option();
+
+$kirby->set('blueprint', $Option->silence(), __DIR__ . DS . '../' . DS . '/blueprints/silence.yml');

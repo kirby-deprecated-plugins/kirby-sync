@@ -1,4 +1,7 @@
 <?php
+namespace KirbySync;
+use c;
+
 if(c::get('plugin.sync.hub')) {
     $kirby->set('hook',
         [
@@ -6,11 +9,11 @@ if(c::get('plugin.sync.hub')) {
             'panel.page.update'
         ],
         function($page) {
-            $core = new SyncCore();
-            $slug = c::get('plugin.sync.slug', 'sync');
-            $token = c::get('plugin.sync.token', 'token');
-            $url = u() . '/' . $slug . '/content/' . $page->id() . '?method=write&token=' . $token;
-            $core->getContent($url);
+            $Core = new Core();
+            $Option = new Option();
+
+            $url = u() . '/' . $Option->slug() . '/content/' . $page->id() . '?method=write&token=' . $Option->token();
+            $Core->getContent($url);
         }
     );
 }

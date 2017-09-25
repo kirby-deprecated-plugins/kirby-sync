@@ -1,5 +1,9 @@
 <?php
-class SyncRead {
+namespace KirbySync;
+use str;
+use Response;
+
+class Read {
     function read($type, $id) {
         $page = page($id);
         switch($type) {
@@ -55,7 +59,7 @@ class SyncRead {
         }
     }
 
-    // Get root and prevent slash as first character
+    // Get root and prevent slash as first character // FÖRKORTA BORT
     function getRoot($uid) {
         if($uid) {
             return $uid . '/';

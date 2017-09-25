@@ -1,27 +1,26 @@
 <?php
-kirby()->routes(array(
-    array(
-        'pattern' => c::get('plugin.sync.slug', 'sync') . '/(:any)/(:all)',
-        'filter' => function($route) {
-            if(get('token') == '' || get('token') != c::get('plugin.sync.token', 'token')) {
-                return false;
-            }
-        },
-        'action'  => function($type, $id) {
-            $method = (c::get('plugin.sync.hub')) ? 'read' : 'write';
-            if(get('method') == 'read' || get('method') == 'write') {
-                $method = get('method');
-            }
+namespace KirbySync;
+use c;
+use str;
 
-            if($method == 'read') {
-                require_once __DIR__ . DS . 'read.php';
-                $read = new SyncRead();
-                return $read->read($type, $id);
-            } elseif($method == 'write') {
-                require_once __DIR__ . DS . 'write.php';
-                $write = new SyncWrite();
-                return $write->write($type, $id);
+$Option = new Option();
+$Read = new Read();
+$Write = new Write();
+
+if(get('token') == $Option->token()) {
+    kirby()->routes(array(
+        array(
+            'pattern' => $Option->slug() . '/(:any)/(:all)',
+            'action'  => function($type, $id) use ($Read, $Write){
+                switch(get('method')) {
+                    case 'read':
+                        return $Read->read($type, $id);
+                        break;
+                    case 'write':
+                        return $Write->write($type, $id);
+                        break;
+                }
             }
-        }
-    )
-));
+        )
+    ));
+}
