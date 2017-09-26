@@ -1,61 +1,42 @@
-# Options
+# Hub & Nodes
 
-The following options can be set in your `/site/config/config.php` file:
+With this plugin we work with a hub and nodes.
 
-**Required**
+## Hub
 
-```php
-c::get('plugin.sync.hub');
-```
+The hub is the domain where your original content is stored.
 
-**Optional**
+Also see how to [setup the hub](hub.md).
 
-```php
-c::get('plugin.sync.slug', 'sync');
-c::get('plugin.sync.parent', 'synced-data');
-c::get('plugin.sync.token', 'token');
-c::get('plugin.sync.blueprint.empty', 'silence');
-```
+## Node
 
-## Required
-
-### plugin.sync.hub
-
-The hub is where your original content is stored. The node domains are the domains where your content is copied to.
-
-On your hub domain this option needs to be `true`. On your node domains, you don't need to set this option.
-
-**Example**
-
-The hub sends the content to the nodes when a page is saved.
+The nodes are the domains where your content is copied to.
 
 ```text
 hub
-L node
-L node
-L node
+├─ node
+└─ node
 ```
 
-## Optional
+Also see how to [setup the nodes](nodes.md).
+
+# Options - Optional
+
+All of these options are optional.
+
+These options needs to be set on both the hub and the nodes in order to work.
+
+In your `site/config/config.php`:
+
+```php
+c::get('plugin.sync.slug', 'sync');
+c::get('plugin.sync.token', 'token');
+```
 
 ### plugin.sync.slug
 
 The slug of the sync API. You only need to change this if it collides with something else you have on `yourdomain.com/sync`.
 
-### plugin.sync.parent
-
-Often it's good to have a parent page for the synced content on the node.
-
-It will look something like this with `synced-data` as the parent.
-
-```text
-example-hub.com/my/page > example-node.com/synced-data/my/page
-```
-
 ### plugin.sync.token
 
-To prevent other people to use your sync API you can protect it by a token of your choice.
-
-### plugin.blueprint.empty
-
-By default a blueprint called `silence` is registered used for the parent `synced-data`. When browsing in the Panel it will just display an empty page. With this option you can change this blueprint name if you need to.
+To prevent other people to use your sync API, you can protect it by a token of your choice.

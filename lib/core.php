@@ -2,7 +2,11 @@
 namespace KirbySync;
 use c;
 
-class Core {    
+class Core {
+    function __construct() {
+        $this->Option = new Option();
+    }
+
     // Get object
     function getObject($parent_uid) {
         if($parent_uid != '')
@@ -14,6 +18,16 @@ class Core {
     // Create page
     function createPage($object, $page_id, $template, $data) {
         return $object->children()->create($page_id, $template, $data);
+    }
+
+    // Read data from hub
+    function visit($domain, $id, $type, $method = 'read', $hub = '') {
+        $url = $domain . '/' . $this->Option->slug() . '/' . $type . '/' . $id;
+        $url .= '?token=' . $this->Option->token();
+        $url .= '&method=' . $method;
+        $url .= '&hub=' . urlencode($hub);
+
+        return $this->getContent($url);
     }
 
     // Get remote content

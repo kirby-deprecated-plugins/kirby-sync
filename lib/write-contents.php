@@ -17,7 +17,7 @@ class WriteContents {
 
         foreach($uids as $page_id) {
             $page_uid = ltrim($page_uid . '/' . $page_id, '/');
-            $prefixed_root = ltrim($prefixed_uid . '/');
+            $prefixed_root = ltrim($prefixed_uid . '/', '/');
 
             if(!page($prefixed_root . $page_id)) {
                 $this->createPage(

@@ -11,34 +11,21 @@ class Write {
         $this->Option = new Option();
         $this->WriteParents = new WriteParents();
         $this->WriteContents = new WriteContents();
+        $this->WriteBlueprints = new WriteBlueprints();
     }
 
     // Write
     function write($type, $id) {
-        $page = page($id);
         switch($type) {
             case 'content':
-                return $this->setContent($id, $this->getContent($id));
+                $data = $this->Core->visit(get('hub'), $id, 'content', 'read');
+                $this->WriteParents->createParents();
+                $this->WriteContents->createContent($id, $data);
                 break;
             case 'blueprint':
-                return $this->blueprint($page);
+                $data = $this->Core->visit(get('hub'), $id, 'blueprint', 'read');
+                return $this->WriteBlueprints->write($id, $data);
                 break;
         }
-    }
-
-    // Get content from read api
-    function getContent($id) {
-        $url = u() . '/' . $this->Option->slug() . '/content/' . $id;
-        $url .= '?token=' . $this->Option->token();
-        $url .= '&method=read';
-
-        $content = $this->Core->getContent($url);
-        return $content;
-    }
-
-    // Write parents and content
-    function setContent($id, $content) {
-        $this->WriteParents->createParents();
-        $this->WriteContents->createContent($id, $content);
     }
 }
