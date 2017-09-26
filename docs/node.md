@@ -1,6 +1,6 @@
 # Node
 
-For information about the node, read [hub and nodes](options.md).
+For information about the node, read [hub and nodes](hub-nodes.md).
 
 ## Options - Required
 
@@ -21,11 +21,9 @@ Even if you sync the blueprints, this plugin does not [register/set](https://get
 
 ### plugin.sync.blueprint.prefix
 
-By default `synced-` is added as a blueprint filename prefix and with this config you can change it.
+By default `synced-` is added as a blueprint filename prefix.
 
 ### plugin.sync.parent
-
-Often it's good to have a parent page for the synced content on the node.
 
 By default `synced-data` is added as a blueprint parent.
 
@@ -35,7 +33,9 @@ example-hub.com/my/page > example-node.com/synced-data/my/page
 
 ### plugin.sync.parent.blueprint
 
-By default a blueprint called `silence` is registered used for the parent `synced-data`. When browsing in the Panel it will just display an empty page. With this option you can change this blueprint name if you need to.
+By default `silence` is the name for the blueprint that is registered for the parent pages.
+
+When browsing in the Panel it will just display an empty page.
 
 # Site paths
 
@@ -43,7 +43,9 @@ In order to change the paths you need to add `site.php` into your Kirby root.
 
 ### sync_blueprints
 
-This is how the blueprint path looks like. If you have not enabled `plugin.sync.blueprint`, you can skip this option.
+This option is only needed if you have enabled `plugin.sync.blueprint`.
+
+By default the `site/blueprints` folder will be used.
 
 ```php
 $kirby = kirby();

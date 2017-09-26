@@ -25,9 +25,5 @@ class Trigger {
     // Call node
     function callNode($domain, $page) {
         $this->Core->visit($domain, $page->id(), 'content', 'write', u());
-        
-        if($this->Option->blueprint()) {
-            $this->Core->visit($domain, $page->id(), 'blueprint', 'write', u());
-        }
     }
 }

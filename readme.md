@@ -6,15 +6,15 @@ Sync your pages to other domains when saving the page.
 
 ## Setup
 
-1. You need at least two domains for it to work and set one of them as `hub`. See [options](docs/options.md).
-1. You need to setup the node domains that the content will be sent to. See [options](docs/options.md).
+1. [Setup the hub](docs/hub.md)
+1. [Setup the nodes](docs/nodes.md)
 
 ## Usage
 
 1. Login to the hub domain panel and create/update a page.
 1. Login to the node domain to see if the change has been synced.
 
-## [Options](docs/options.md)
+## [Options](docs/hub-nodes.md)
 
 ## Changelog
 

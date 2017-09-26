@@ -2,6 +2,7 @@
 namespace KirbySync;
 use str;
 use Response;
+use b;
 
 class ReadContent {
     function __construct() {
@@ -21,6 +22,7 @@ class ReadContent {
                     'modified' => $page->modified(),
                     'template' => $page->template(),
                     'content' => $page->content()->toArray(),
+                    'blueprint' => b::blueprint($page->template())
                 ];
             }
             $parent_uid = $root . $page_id;
