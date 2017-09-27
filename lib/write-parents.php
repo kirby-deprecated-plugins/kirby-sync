@@ -15,8 +15,8 @@ class WriteParents {
             $root = ltrim($parent_uid . '/');
 
             if(!page($root . $page_id)) {
-                $this->createPage(
-                    $this->getObject($parent_uid),
+                $this->Core->createPage(
+                    $this->Core->getObject($parent_uid),
                     $page_id,
                     $this->Option->silence(),
                     []
