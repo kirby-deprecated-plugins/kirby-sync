@@ -6,6 +6,8 @@ Sync your pages to other domains when saving the page.
 
 ## Setup
 
+1. [Learn about hub and nodes](docs/hub-nodes.md)
+1. [Install the plugin on the hub and the nodes](docs/installation.md)
 1. [Setup the hub](docs/hub.md)
 1. [Setup the nodes](docs/nodes.md)
 

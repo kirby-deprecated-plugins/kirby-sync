@@ -19,10 +19,20 @@ class WriteContents {
 
         foreach($uids as $page_id) {
             $page_uid = $this->pageUid($page_uid, $page_id);
+            $page = $pages[$page_uid];
+
+            if($this->Option->modified()) {
+                $page['content']['sync-modified'] = $page['modified'];
+                $page['blueprint']['fields']['sync-modified'] = [
+                    'label' => 'Sync modified',
+                    'type' => 'text',
+                    'readonly' => true
+                ];
+            }
             $data = [
-                'content' => $pages[$page_uid]['content'],
-                'template' => $pages[$page_uid]['template'],
-                'blueprint' => $pages[$page_uid]['blueprint'],
+                'content' => $page['content'],
+                'template' => $page['template'],
+                'blueprint' => $page['blueprint'],
                 'page_id' => $page_id,
                 'root' => $this->root($full_uid),
                 'page_uid' => $page_uid,

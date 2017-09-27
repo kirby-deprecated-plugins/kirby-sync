@@ -2,35 +2,35 @@
 namespace KirbySync;
 use str;
 use Response;
-
-require_once __DIR__ . DS . 'read-content.php';
-//require_once __DIR__ . DS . 'read-blueprint.php';
+use b;
 
 class Read {
     function __construct() {
         $this->Core = new Core();
         $this->Option = new Option();
-        $this->ReadContent = new ReadContent();
-        //$this->ReadBlueprint = new ReadBlueprint();
-    }
-    function read($type, $id) {
-        return $this->ReadContent->read($id);
     }
 
-    // Read status
-    function status($page) {
-        if($page) {
-            $json = json_encode([
-                'match' => true,
-                'modified' => $page->modified(),
-                'blueprint' => b::file($page->template()),
-                'textfile' => $page->textfile()
-            ]);
-        } else {
-            $json = json_encode([
-                'match' => false,
-            ]);
+    // Read content
+    function read($id) {
+        $pages = str::split($id, '/');
+        $parent_uid = '';
+        foreach($pages as $page_id) {
+            $root = ltrim($parent_uid . '/', '/');
+            $page = page($root . $page_id);
+
+            if($page) {
+                $array[$root . $page_id] = [
+                    'modified' => $page->modified(),
+                    'template' => $page->template(),
+                    'content' => $page->content()->toArray(),
+                    'blueprint' => b::blueprint($page->template())
+                ];
+            }
+            $parent_uid = $root . $page_id;
         }
-        return new Response($json, 'json', 200);
+        if(isset($array)) {
+            $json = json_encode($array);
+            return new Response($json, 'json', 200);
+        }
     }
 }

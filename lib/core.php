@@ -21,10 +21,9 @@ class Core {
     }
 
     // Read data from hub
-    function visit($domain, $id, $type, $method = 'read', $hub = '') {
-        $url = $domain . '/' . $this->Option->slug() . '/' . $type . '/' . $id;
+    function visit($domain, $id, $method = 'read', $hub = '') {
+        $url = $domain . '/' . $this->Option->slug() . '/' . $method . '/' . $id;
         $url .= '?token=' . $this->Option->token();
-        $url .= '&method=' . $method;
         $url .= '&hub=' . urlencode($hub);
 
         return $this->getContent($url);

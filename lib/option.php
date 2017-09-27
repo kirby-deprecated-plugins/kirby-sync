@@ -6,36 +6,44 @@ class Option {
     function __construct() {
         $this->Kirby = kirby();
     }
+
+    function get($name, $data) {
+        return c::get('plugin.sync.' . $name, $data);
+    }
     function parent() {
-        return c::get('plugin.sync.parent', 'synced-data');
+        return $this->get('parent', 'synced-data');
     }
 
     function silence() {
-        return c::get('plugin.sync.parent.blueprint', 'silence');
+        return $this->get('parent.blueprint', 'silence');
     }
 
     function slug() {
-        return c::get('plugin.sync.slug', 'sync');
+        return $this->get('slug', 'sync');
     }
 
     function token() {
-        return c::get('plugin.sync.token', 'token');
+        return $this->get('token', 'token');
     }
 
     function blueprint() {
-        return c::get('plugin.sync.blueprint', false);
+        return $this->get('blueprint', false);
     }
 
     function prefix() {
-        return c::get('plugin.sync.blueprint.prefix', 'synced-');
+        return $this->get('blueprint.prefix', 'synced-');
     }
 
     function hub() {
-        return c::get('plugin.sync.hub', false);
+        return $this->get('hub', false);
     }
 
     function domains() {
-        return c::get('plugin.sync.domains');
+        return $this->get('domains', null);
+    }
+
+    function modified() {
+        return $this->get('modified', false);
     }
 
     function blueprintRoot() {

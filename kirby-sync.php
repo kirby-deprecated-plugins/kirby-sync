@@ -9,12 +9,13 @@ require_once __DIR__ . DS . 'lib' . DS . 'option.php';
 
 $Option = new Option();
 
+require_once __DIR__ . DS . 'lib' . DS . 'core.php';
+
 if($Option->domains()) {
     require_once __DIR__ . DS . 'lib' . DS . 'trigger.php';
     require_once __DIR__ . DS . 'lib' . DS . 'hooks.php';
 }
 
-require_once __DIR__ . DS . 'lib' . DS . 'core.php';
 require_once __DIR__ . DS . 'lib' . DS . 'registry.php';
 require_once __DIR__ . DS . 'lib' . DS . 'read.php';
 require_once __DIR__ . DS . 'lib' . DS . 'write.php';

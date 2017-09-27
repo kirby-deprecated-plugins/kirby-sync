@@ -7,6 +7,7 @@ For information about the node, read [hub and nodes](hub-nodes.md).
 ```php
 c::get('plugin.sync.blueprint', false);
 c::get('plugin.sync.blueprint.prefix', 'synced-');
+c::get('plugin.sync.modified', false);
 c::get('plugin.sync.parent', 'synced-data');
 c::get('plugin.sync.parent.blueprint', 'silence');
 ```
@@ -22,6 +23,10 @@ Even if you sync the blueprints, this plugin does not [register/set](https://get
 ### plugin.sync.blueprint.prefix
 
 By default `synced-` is added as a blueprint filename prefix.
+
+### plugin.sync.modified
+
+If you need the original file modified timestamp, you can set this value to `true` and it will be sent to the node.
 
 ### plugin.sync.parent
 

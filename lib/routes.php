@@ -11,13 +11,13 @@ if(get('token') == $Option->token()) {
     kirby()->routes(array(
         array(
             'pattern' => $Option->slug() . '/(:any)/(:all)',
-            'action'  => function($type, $id) use ($Read, $Write){
-                switch(get('method')) {
+            'action'  => function($method, $id) use ($Read, $Write) {
+                switch($method) {
                     case 'read':
-                        return $Read->read($type, $id);
+                        return $Read->read($id);
                         break;
                     case 'write':
-                        return $Write->write($type, $id);
+                        return $Write->write($id);
                         break;
                 }
             }
