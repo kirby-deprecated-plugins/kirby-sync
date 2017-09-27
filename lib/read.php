@@ -21,9 +21,9 @@ class Read {
             if($page) {
                 $array[$root . $page_id] = [
                     'modified' => $page->modified(),
-                    'template' => $page->template(),
+                    'template' => $page->intendedTemplate(),
                     'content' => $page->content()->toArray(),
-                    'blueprint' => b::blueprint($page->template())
+                    'blueprint' => b::blueprint($page->intendedTemplate())
                 ];
             }
             $parent_uid = $root . $page_id;
