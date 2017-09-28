@@ -10,19 +10,19 @@ hub (domain)
 └─ node (domain)
 ```
 
-## Table of contents
+### Table of contents
 
-├─ [Installation](docs/installation.md)
-├─ [Troubleshooting](docs/troubleshooting.md)
-└─ [Hub & nodes](docs/hub-nodes.md)
-   ├ [Hub](docs/hub.md)
-   └ [Node](docs/node.md)
+- [Installation](docs/installation.md)
+- [Troubleshooting](docs/troubleshooting.md)
+- [Hub & nodes](docs/hub-nodes.md)
+  - [Hub](docs/hub.md)
+  - [Node](docs/node.md)
 
-## Vocabulary
+### Vocabulary
 
-**Hub** - The domain where the original content is saved.
-**Node** - One or many domains where your content will be sent.
-**Sync** - One way direction copy, from the hub to the nodes.
+- **Hub** - The domain where the original content is saved.
+- **Node** - One or many domains where your content will be sent.
+- **Sync** - One way direction copy, from the hub to the nodes.
 
 ## Simple setup
 
