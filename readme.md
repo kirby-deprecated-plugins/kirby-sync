@@ -4,19 +4,56 @@
 
 Sync your pages to other domains when saving the page.
 
-## Setup
+```text
+hub (domain)
+├─ node (domain)
+└─ node (domain)
+```
 
-1. [Learn about hub and nodes](docs/hub-nodes.md)
-1. [Install the plugin on the hub and the nodes](docs/installation.md)
-1. [Setup the hub](docs/hub.md)
-1. [Setup the nodes](docs/nodes.md)
+## Table of contents
+
+├─ [Installation](docs/installation.md)
+├─ [Troubleshooting](docs/troubleshooting.md)
+└─ [Hub & nodes](docs/hub-nodes.md)
+   ├ [Hub](docs/hub.md)
+   └ [Node](docs/node.md)
+
+## Vocabulary
+
+**Hub** - The domain where the original content is saved.
+**Node** - One or many domains where your content will be sent.
+**Sync** - One way direction copy, from the hub to the nodes.
+
+## Simple setup
+
+### 1. Install the plugin
+
+[Install the plugin](docs/installation.md) on both the hub and the nodes.
+
+### 2. Add domains
+
+In the hub `config.php`, add node domains and page parents that should be synced to the nodes.
+
+**Example**
+
+```php
+c::set('plugin.sync.domains', [
+    'https://example.com' => [
+        'projects/project-k',
+        'projects'
+    ],
+    'https://anotherdomain.com' => [
+        'some-parent'
+    ]
+]);
+```
+
+There are much more [options for the nodes](docs/node.md).
 
 ## Usage
 
 1. Login to the hub domain panel and create/update a page.
 1. Login to the node domain to see if the change has been synced.
-
-## [Options](docs/hub-nodes.md)
 
 ## Changelog
 
