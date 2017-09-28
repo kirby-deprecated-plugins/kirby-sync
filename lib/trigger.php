@@ -39,6 +39,8 @@ class Trigger {
 
     // Call node
     function callNode($domain, $page) {
-        $this->Core->visit($domain, $page->id(), 'write', u());
+        $url = $this->Core->visitUrl($domain, $page->id(), 'write', u());
+        $this->log('Visit: ' . $url);
+        $this->Core->visit($url);
     }
 }
