@@ -7,7 +7,7 @@ For information about the hub, read [hub and nodes](hub-nodes.md).
 These options are required in order for the plugin to work.
 
 ```php
-c::get('plugin.sync.domains');
+c::set('plugin.sync.domains');
 ```
 
 ### plugin.sync.domains

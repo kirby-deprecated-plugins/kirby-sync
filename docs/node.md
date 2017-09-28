@@ -5,11 +5,12 @@ For information about the node, read [hub and nodes](hub-nodes.md).
 ## Options - Optional
 
 ```php
-c::get('plugin.sync.blueprint', false);
-c::get('plugin.sync.blueprint.prefix', 'synced-');
-c::get('plugin.sync.modified', false);
-c::get('plugin.sync.parent', 'synced-data');
-c::get('plugin.sync.parent.blueprint', 'silence');
+c::set('plugin.sync.blueprint', false);
+c::set('plugin.sync.blueprint.prefix', 'synced-');
+c::set('plugin.sync.content.prefix', c::get('plugin.sync.blueprint.prefix'));
+c::set('plugin.sync.modified', false);
+c::set('plugin.sync.parent', 'synced-data');
+c::set('plugin.sync.parent.blueprint', 'silence');
 ```
 
 ### plugin.sync.blueprint

@@ -65,7 +65,7 @@ class WriteContents {
             $this->Core->createPage(
                 $this->Core->getObject($data['full_parent_uid']),
                 $data['page_id'],
-                $data['template'],
+                $this->Option->contentPrefix() . $data['template'],
                 $data['content']
             );
         } else {
@@ -76,7 +76,7 @@ class WriteContents {
     // Write blueprint
     function writeBlueprint($data) {
         $blueprint = yaml::encode($data['blueprint']);            
-        $blueprint_path = $this->Option->blueprintRoot() . DS . $this->Option->prefix() . $data['template'] . '.yml';
+        $blueprint_path = $this->Option->blueprintRoot() . DS . $this->Option->blueprintPrefix() . $data['template'] . '.yml';
         f::write($blueprint_path, $blueprint);
     }
 }

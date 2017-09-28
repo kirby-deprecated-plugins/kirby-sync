@@ -48,6 +48,7 @@ There are much more options for the [hub and nodes](docs/hub-nodes.md) and for [
   - [Hub](docs/hub.md)
   - [Node](docs/node.md)
 - [Troubleshooting](docs/troubleshooting.md)
+- [Changelog](docs/changelog.md)
 
 ## Requirements
 

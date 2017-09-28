@@ -30,8 +30,12 @@ class Option {
         return $this->get('blueprint', false);
     }
 
-    function prefix() {
+    function blueprintPrefix() {
         return $this->get('blueprint.prefix', 'synced-');
+    }
+
+    function contentPrefix() {
+        return $this->get('content.prefix', $this->blueprintPrefix());
     }
 
     function hub() {

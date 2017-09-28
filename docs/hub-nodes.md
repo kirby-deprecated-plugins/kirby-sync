@@ -29,8 +29,8 @@ All of these options are optional.
 In your `site/config/config.php`:
 
 ```php
-c::get('plugin.sync.slug', 'sync');
-c::get('plugin.sync.token', 'token');
+c::set('plugin.sync.slug', 'sync');
+c::set('plugin.sync.token', 'token');
 ```
 
 ### plugin.sync.slug
