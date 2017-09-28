@@ -2,7 +2,7 @@
 
 *Version 0.1*
 
-Sync your pages to other domains when saving the page.
+Copy (called sync) your page on save from a domain (called hub) > to other domains (called nodes).
 
 ```text
 hub (domain)
@@ -17,12 +17,6 @@ hub (domain)
 - [Hub & nodes](docs/hub-nodes.md)
   - [Hub](docs/hub.md)
   - [Node](docs/node.md)
-
-### Vocabulary
-
-- **Hub** - The domain where the original content is saved.
-- **Node** - One or many domains where your content will be sent.
-- **Sync** - One way direction copy, from the hub to the nodes.
 
 ## Simple setup
 
