@@ -25,6 +25,10 @@ Even if you sync the blueprints, this plugin does not [register/set](https://get
 
 By default `synced-` is added as a blueprint filename prefix.
 
+### plugin.sync.content.prefix
+
+By default it will fallback to `plugin.sync.blueprint.prefix` and will add `synced-` to your content text file.
+
 ### plugin.sync.modified
 
 If you need the original file modified timestamp, you can set this value to `true` and it will be sent to the node.
