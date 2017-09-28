@@ -2,7 +2,7 @@
 
 For information about the node, read [hub and nodes](hub-nodes.md).
 
-## Options - Required
+## Options - Optional
 
 ```php
 c::get('plugin.sync.blueprint', false);

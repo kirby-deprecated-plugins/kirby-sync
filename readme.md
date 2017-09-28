@@ -10,14 +10,6 @@ hub (domain)
 └─ node (domain)
 ```
 
-### Table of contents
-
-- [Installation](docs/installation.md)
-- [Troubleshooting](docs/troubleshooting.md)
-- [Hub & nodes](docs/hub-nodes.md)
-  - [Hub](docs/hub.md)
-  - [Node](docs/node.md)
-
 ## Simple setup
 
 ### 1. Install the plugin
@@ -42,12 +34,20 @@ c::set('plugin.sync.domains', [
 ]);
 ```
 
-There are much more [options for the nodes](docs/node.md).
+There are much more options for the [hub and nodes](docs/hub-nodes.md) and for [nodes](docs/node.md).
 
 ## Usage
 
 1. Login to the hub domain panel and create/update a page.
 1. Login to the node domain to see if the change has been synced.
+
+### Table of contents
+
+- [Installation](docs/installation.md)
+- [Hub & nodes](docs/hub-nodes.md)
+  - [Hub](docs/hub.md)
+  - [Node](docs/node.md)
+- [Troubleshooting](docs/troubleshooting.md)
 
 ## Changelog
 
@@ -63,11 +63,13 @@ There are much more [options for the nodes](docs/node.md).
 
 This plugin is provided "as is" with no guarantee. Use it at your own risk and always test it yourself before using it in a production environment. If you find any issues, please [create a new issue](https://github.com/username/plugin-name/issues/new).
 
-## License
+## Purchase
 
-[MIT](https://opensource.org/licenses/MIT)
+Be sure to try before you buy. Refunds are not supported. Read more in the [license agreement](docs/license.md).
 
-It is discouraged to use this plugin in any project that promotes racism, sexism, homophobia, animal abuse, violence or any other form of hate speech.
+[![Pay now](https://www.paypalobjects.com/en_US/SE/i/btn/btn_paynowCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=W68WGMJVFLTFU)
+
+**Price:** 50 EUR (on each hub domain)
 
 ## Credits
 
