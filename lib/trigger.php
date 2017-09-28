@@ -31,9 +31,10 @@ class Trigger {
     }
 
     function log($log) {
-        $this->log .= $log . "\n";
-        $file = kirby()->roots()->index() . DS . 'log.txt';
-        file_put_contents($file, $this->log);
+        if($this->Option->log()) {
+            $this->log .= $log . "\n";
+            file_put_contents($this->Option->log(), $this->log);
+        }
     }
 
     // Call node
@@ -41,6 +42,3 @@ class Trigger {
         $this->Core->visit($domain, $page->id(), 'write', u());
     }
 }
-
-#$trigger = new Trigger();
-#$trigger->createUpdate(page('projects/project-b'));

@@ -38,6 +38,10 @@ class Option {
         return $this->get('content.prefix', $this->blueprintPrefix());
     }
 
+    function log() {
+        return $this->get('log', false);
+    }
+
     function hub() {
         return $this->get('hub', false);
     }

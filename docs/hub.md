@@ -32,3 +32,19 @@ c::set('plugin.sync.domains', [
 ```
 
 `projects/project-a` will match `projects`, because `projects` is a parent of `projects/project-a`.
+
+## Options - Optional
+
+```php
+c::set('plugin.sync.log', false);
+```
+
+### plugin.sync.log
+
+Hooks are hard to debug. It's possible to set a path to a log file. By default, no log file is created.
+
+If you need a log file, the option should look something like this:
+
+```php
+c::set('plugin.sync.log', kirby()->roots()->index() . DS . 'sync-log.txt');
+```
