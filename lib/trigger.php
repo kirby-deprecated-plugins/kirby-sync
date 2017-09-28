@@ -17,13 +17,14 @@ class Trigger {
                 $match = false;
                 $this->log($domain);
                 foreach($parents as $parent) {
-                    $this->log($parent);
-                    $this->log($page->id());
+                    $this->log('Parent: ' . $parent);
+                    $this->log('Page id:' . $page->id());
                     if(str::startsWith($page->id(), $parent)) {
                         $match = true;
                     }
                 }
                 if($match) {
+                    $this->log('Match found: '. $domain);
                     $this->callNode($domain, $page);
                 }
             }

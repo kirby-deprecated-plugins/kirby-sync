@@ -14,6 +14,7 @@ class WriteContents {
     function writeData($id, $content) {
         $uids = str::split($id, '/');
         $pages = json_decode($content, true);
+
         $page_uid = '';
         $full_uid = $this->Option->parent();
 
@@ -29,6 +30,7 @@ class WriteContents {
                     'readonly' => true
                 ];
             }
+
             $data = [
                 'content' => $page['content'],
                 'template' => $page['template'],

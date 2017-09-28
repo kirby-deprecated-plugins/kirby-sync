@@ -14,7 +14,8 @@ class Write {
 
     // Write
     function write($id) {
-        $data = $this->Core->visit(get('hub'), $id, 'read');
+        $url = $this->Core->visitUrl(get('hub'), $id, 'read');
+        $data = $this->Core->visit($url);
         $this->WriteParents->createParents();
         $this->WriteContents->writeData($id, $data);
     }
