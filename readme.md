@@ -1,6 +1,6 @@
 # Kirby Sync
 
-*Version 0.1*
+[![Version 0.1](https://img.shields.io/badge/version-0.1-blue.svg)](https://github.com/jenstornell/kirby-sync/blob/master/docs/changelog.md) [![Commercial license](https://img.shields.io/badge/license-commercial-red.svg)](https://github.com/jenstornell/kirby-sync/blob/master/docs/license.md) [![Commercial license](https://img.shields.io/badge/price-€50-yellow.svg)](https://github.com/jenstornell/kirby-sync/blob/master/docs/license.md)
 
 Copy (called sync) your page on save from a domain (called hub) > to other domains (called nodes).
 
@@ -48,12 +48,6 @@ There are much more options for the [hub and nodes](docs/hub-nodes.md) and for [
   - [Hub](docs/hub.md)
   - [Node](docs/node.md)
 - [Troubleshooting](docs/troubleshooting.md)
-
-## Changelog
-
-**0.1**
-
-- Initial release
 
 ## Requirements
 
