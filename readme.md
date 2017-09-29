@@ -1,6 +1,6 @@
 # Kirby Sync
 
-[![Version 0.1](https://img.shields.io/badge/version-0.1-blue.svg)](https://github.com/jenstornell/kirby-sync/blob/master/docs/changelog.md) [![Commercial license](https://img.shields.io/badge/license-commercial-red.svg)](https://github.com/jenstornell/kirby-sync/blob/master/docs/license.md) [![Commercial license](https://img.shields.io/badge/price-€50-yellow.svg)](https://github.com/jenstornell/kirby-sync/blob/master/docs/license.md)
+[![Version 0.2](https://img.shields.io/badge/version-0.2-blue.svg)](https://github.com/jenstornell/kirby-sync/blob/master/docs/changelog.md) [![Commercial license](https://img.shields.io/badge/license-commercial-red.svg)](https://github.com/jenstornell/kirby-sync/blob/master/docs/license.md) [![Commercial license](https://img.shields.io/badge/price-€50-yellow.svg)](https://github.com/jenstornell/kirby-sync/blob/master/docs/license.md)
 
 Copy (called sync) your page on save from a domain (called hub) > to other domains (called nodes).
 
