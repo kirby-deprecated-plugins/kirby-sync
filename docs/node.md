@@ -8,6 +8,7 @@ For information about the node, read [hub and nodes](hub-nodes.md).
 c::set('plugin.sync.blueprint', false);
 c::set('plugin.sync.blueprint.prefix', 'synced-');
 c::set('plugin.sync.content.prefix', c::get('plugin.sync.blueprint.prefix'));
+c::set('plugin.sync.trigger.delete', false);
 c::set('plugin.sync.modified', false);
 c::set('plugin.sync.parent', 'synced-data');
 c::set('plugin.sync.parent.blueprint', 'silence');
@@ -28,6 +29,10 @@ By default `synced-` is added as a blueprint filename prefix.
 ### plugin.sync.content.prefix
 
 By default it will fallback to `plugin.sync.blueprint.prefix` and will add `synced-` to your content text file.
+
+### plugin.sync.trigger.delete
+
+When you delete a synced page on the hub, it will **not** be deleted on the node by default. To also delete pages on the nodes, set this option to `true`.
 
 ### plugin.sync.modified
 

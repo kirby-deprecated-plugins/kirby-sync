@@ -50,9 +50,15 @@ There are much more options for the [hub and nodes](docs/hub-nodes.md) and for [
 - [Troubleshooting](docs/troubleshooting.md)
 - [Changelog](docs/changelog.md)
 
+## Good to know
+
+- This plugin is not yet tested on multi language sites.
+- You can sync sorted pages, but the sort number will not be synced because of [this issue](https://github.com/getkirby/panel/issues/827).
+
 ## Requirements
 
 - [**Kirby**](https://getkirby.com/) 2.5.5+
+- PHP 7+
 
 ## Disclaimer
 

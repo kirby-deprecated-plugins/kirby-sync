@@ -24,7 +24,9 @@ class Core {
     function visitUrl($domain, $id, $method = 'read', $hub = '') {
         $url = $domain . '/' . $this->Option->slug() . '/' . $method . '/' . $id;
         $url .= '?token=' . $this->Option->token();
-        $url .= '&hub=' . urlencode($hub);
+        if(!empty($hub)) {
+            $url .= '&hub=' . urlencode($hub);
+        }
         return $url;
     }
 

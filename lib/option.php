@@ -18,6 +18,10 @@ class Option {
         return $this->get('parent.blueprint', 'silence');
     }
 
+    function triggerDelete() {
+        return $this->get('trigger.delete', false);
+    }
+
     function slug() {
         return $this->get('slug', 'sync');
     }
