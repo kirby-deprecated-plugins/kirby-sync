@@ -14,11 +14,7 @@ class settings {
             $settings = array_merge($settings, $settings_custom);
         }
 
-        print_r($settings_custom);
-        #print_r($settings);
-
         if(isset($settings) && array_key_exists($name, $settings)) {   
-            #echo c::get($prefix . $name, $settings[$name]) . "\n";
             return c::get($prefix . $name, $settings[$name]);
         }
     }
