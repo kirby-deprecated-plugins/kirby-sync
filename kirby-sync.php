@@ -1,27 +1,35 @@
 <?php
 namespace KirbySync;
 use str;
+use c;
 
-require_once __DIR__ . DS . 'lib' . DS . 'option.php';
-require_once __DIR__ . DS . 'lib' . DS . 'core.php';
+if(c::get('plugin.sync.active', true)) {
+    require_once __DIR__ . DS . 'shared' . DS . 'settings.php';
+    require_once __DIR__ . DS . 'shared' . DS . 'config.php';
+    require_once __DIR__ . DS . 'shared' . DS . 'fetch.php';
 
-$Option = new Option();
-
-if($Option->domains()) {
-    require_once __DIR__ . DS . 'lib' . DS . 'trigger.php';
-    require_once __DIR__ . DS . 'lib' . DS . 'hooks.php';
-    require_once __DIR__ . DS . 'lib' . DS . 'registry.php';
-}
-
-if(get('token') == $Option->token()) {
-    if(!file_exists(kirby()->roots()->plugins() . DS . 'kirby-blueprint-reader')) {
-        require_once __DIR__ . DS. 'kirby-blueprint-reader' . DS . 'kirby-blueprint-reader.php';
+    if(settings::domains()) {
+        require_once __DIR__ . DS . 'hub' . DS . 'hooks.php';
+    } else {
+        require_once __DIR__ . DS . 'node' . DS . 'config.php';
     }
-    
-    require_once __DIR__ . DS . 'lib' . DS . 'read.php';
-    require_once __DIR__ . DS . 'lib' . DS . 'write.php';
-    require_once __DIR__ . DS . 'lib' . DS . 'delete.php';
-    require_once __DIR__ . DS . 'lib' . DS . 'rename.php';
 
-    require_once __DIR__ . DS . 'lib' . DS . 'routes.php';
+    if(!empty(settings::token()) && get('token') == settings::token()) {
+        if(!file_exists(kirby()->roots()->plugins() . DS . 'kirby-blueprint-reader')) {
+            require_once __DIR__ . DS. 'blueprint-reader' . DS . 'kirby-blueprint-reader.php';
+        }
+
+        if(settings::domains()) {
+            require_once __DIR__ . DS . 'hub' . DS . 'tasks' . DS . 'read.php';
+            require_once __DIR__ . DS . 'hub' . DS . 'routes.php';
+        } else {
+            require_once __DIR__ . DS . 'node' . DS . 'routes.php';
+            require_once __DIR__ . DS . 'node' . DS . 'tasks.php';
+        }
+    }
+
+    if(!settings::domains()) {
+        $path = __DIR__ . DS . 'blueprints' . DS . 'silence.yml';
+        $kirby->set('blueprint', settings::prefix() . settings::parentBlueprint(), $path);
+    }
 }

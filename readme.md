@@ -1,6 +1,6 @@
 # Kirby Sync
 
-[![Version 0.2](https://img.shields.io/badge/version-0.2-blue.svg)](https://github.com/jenstornell/kirby-sync/blob/master/docs/changelog.md) [![Commercial license](https://img.shields.io/badge/license-commercial-red.svg)](https://github.com/jenstornell/kirby-sync/blob/master/docs/license.md) [![Commercial license](https://img.shields.io/badge/price-€50-yellow.svg)](https://github.com/jenstornell/kirby-sync/blob/master/docs/license.md)
+[![Version 0.3](https://img.shields.io/badge/version-0.3-blue.svg)](https://github.com/jenstornell/kirby-sync/blob/master/docs/changelog.md) [![Commercial license](https://img.shields.io/badge/license-commercial-red.svg)](https://github.com/jenstornell/kirby-sync/blob/master/docs/license.md) [![Commercial license](https://img.shields.io/badge/price-€9-yellow.svg)](https://github.com/jenstornell/kirby-sync/blob/master/docs/license.md)
 
 Copy (called sync) your page on save from a domain (called hub) > to other domains (called nodes).
 
@@ -32,6 +32,14 @@ c::set('plugin.sync.domains', [
         'some-parent'
     ]
 ]);
+```
+
+### 3. Add a token on both hub and nodes
+
+A token is required. Use the same string on both the hub and the nodes.
+
+```php
+c::set('plugin.sync.token', null);
 ```
 
 There are much more options for the [hub and nodes](docs/hub-nodes.md) and for [nodes](docs/node.md).
@@ -70,7 +78,27 @@ Be sure to try before you buy. Refunds are not supported. Read more in the [lice
 
 [![Pay now](https://www.paypalobjects.com/en_US/SE/i/btn/btn_paynowCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TB7ASKYRXLJD2)
 
-**Price:** 50 EUR (on each hub domain)
+### Single domain license
+
+This license can be used for one hub domain.
+
+**Price:** [Pay 9 EUR](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TB7ASKYRXLJD2)
+
+### Unlimited domain license
+
+This license can be used for unlimited number of domains. You are allowed to use this license for your clients as well.
+
+**Price:** [Pay 50 EUR](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U8CS633JCEW6C)
+
+### Unlimited plugins, unlimited domains
+
+This license can be used for unlimited plugins on [this Github account](https://github.com/jenstornell) on unlimited domains. You are allowed to use this license for your clients as well.
+
+**Price:** [Pay 100 EUR](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3KJGBSXNPTECL)
+
+## Donate
+
+If you want to make a donation in addition to the purchase, you can do that by sending any amount  https://www.paypal.me/DevoneraAB
 
 ## Credits
 

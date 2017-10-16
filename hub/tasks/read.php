@@ -1,17 +1,12 @@
 <?php
 namespace KirbySync;
 use str;
-use Response;
+use response;
 use b;
 
 class Read {
-    function __construct() {
-        $this->Core = new Core();
-        $this->Option = new Option();
-    }
-
     // Read content
-    function read($id) {
+    function data($id) {
         $pages = str::split($id, '/');
         $parent_uid = '';
         foreach($pages as $page_id) {
@@ -20,8 +15,8 @@ class Read {
 
             if($page) {
                 $array[$root . $page_id] = [
-                    'modified' => $page->modified(),
                     'template' => $page->intendedTemplate(),
+                    'filename' => pathinfo($page->textfile(), PATHINFO_FILENAME),
                     'content' => $page->content()->toArray(),
                     'blueprint' => b::blueprint($page->intendedTemplate())
                 ];

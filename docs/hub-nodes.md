@@ -20,6 +20,18 @@ hub
 
 Also see how to [setup a node](node.md).
 
+# Options - Required
+
+*These options needs to be set on both the hub and the nodes in order to work.*
+
+```php
+c::set('plugin.sync.token', null);
+```
+
+### plugin.sync.token
+
+To prevent other people to use your sync API, you need to protect it by a token (string) of your choice. You need to use the same token on both the hub and the nodes in order to make the handshake.
+
 # Options - Optional
 
 All of these options are optional.
@@ -30,13 +42,13 @@ In your `site/config/config.php`:
 
 ```php
 c::set('plugin.sync.slug', 'sync');
-c::set('plugin.sync.token', 'token');
+c::set('plugin.sync.active', true);
 ```
 
 ### plugin.sync.slug
 
 The slug of the sync API. You only need to use this config if you suspect a collision with `yourdomain.com/sync`.
 
-### plugin.sync.token
+### plugin.sync.active
 
-To prevent other people to use your sync API, you can protect it by a token of your choice.
+The plugin will be update by default but by setting this value to `false` the plugin will be disabled.
