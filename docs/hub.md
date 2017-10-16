@@ -21,12 +21,10 @@ In the example below `projects/project-a` will be sent to `example.com` when it'
 ```php
 c::set('plugin.sync.domains', [
     'https://example.com' => [
-        'projects/project-k',
-        'projects'
+        'projects/project-a',
     ],
     'https://anotherdomain.com' => [
-        'some-parent',
-        'another/parent'
+        'projects',
     ]
 ]);
 ```

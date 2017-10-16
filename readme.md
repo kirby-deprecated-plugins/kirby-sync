@@ -2,7 +2,7 @@
 
 [![Version 0.3](https://img.shields.io/badge/version-0.3-blue.svg)](https://github.com/jenstornell/kirby-sync/blob/master/docs/changelog.md) [![Commercial license](https://img.shields.io/badge/license-commercial-red.svg)](https://github.com/jenstornell/kirby-sync/blob/master/docs/license.md) [![Commercial license](https://img.shields.io/badge/price-€9-yellow.svg)](https://github.com/jenstornell/kirby-sync/blob/master/docs/license.md)
 
-Copy (called sync) your page on save from a domain (called hub) > to other domains (called nodes).
+Copy (called sync) your page on when saving the page in the panel, from a domain (called hub) > to other domains (called nodes).
 
 ```text
 hub (domain)
@@ -25,18 +25,17 @@ In the hub `config.php`, add node domains and page parents that should be synced
 ```php
 c::set('plugin.sync.domains', [
     'https://example.com' => [
-        'projects/project-k',
-        'projects'
+        'projects/project-a',
     ],
     'https://anotherdomain.com' => [
-        'some-parent'
+        'projects'
     ]
 ]);
 ```
 
 ### 3. Add a token on both hub and nodes
 
-A token is required. Use the same string on both the hub and the nodes.
+A token is **required**. Use the same string on both the hub and the nodes.
 
 ```php
 c::set('plugin.sync.token', null);

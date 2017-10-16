@@ -13,23 +13,19 @@ c::set('plugin.sync.parent.blueprint', 'silence');
 
 ### plugin.sync.blueprint
 
-As default your blueprints are not synced. To sync your blueprints, you need to set this option to `true`.
+By default your blueprints are not synced. To sync your blueprints, you need to set this option to `true`.
 
-**Be aware:**
-
-Even if you sync the blueprints, this plugin does not [register/set](https://getkirby.com/docs/developer-guide/plugins/registry) them up for you.
+**Be aware:** Even if you sync the blueprints, this plugin does not [register/set](https://getkirby.com/docs/developer-guide/plugins/registry) them up for you. However, if you don't set a path, they will be placed in the `blueprints` folder and Kirby will find them there.
 
 ### plugin.sync.prefix
 
-By default it will fallback to `synced-`.
+Prefix is used by both the content text file and the blueprint file. That's because they should match. By default it will fallback to `synced-`.
 
-**Be aware:**
-
-
+**Be aware:** If you remove the prefix there is a risk that your blueprints will be overwritten if they use the same name.
 
 ### plugin.sync.parent
 
-By default `synced-data` is added as a blueprint parent.
+To prevent page collisions on your hub, you can add a parent to your data. By default `synced-data` is added as a blueprint parent.
 
 ```text
 example-hub.com/my/page > example-node.com/synced-data/my/page
