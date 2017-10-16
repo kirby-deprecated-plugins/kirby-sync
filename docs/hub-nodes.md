@@ -36,8 +36,6 @@ To prevent other people to use your sync API, you need to protect it by a token 
 
 All of these options are optional.
 
-*These options needs to be set on both the hub and the nodes in order to work.*
-
 In your `site/config/config.php`:
 
 ```php
@@ -47,8 +45,8 @@ c::set('plugin.sync.active', true);
 
 ### plugin.sync.slug
 
-The slug of the sync API. You only need to use this config if you suspect a collision with `yourdomain.com/sync`.
+The slug of the sync API. You only need to use this config if you suspect a collision with `yourdomain.com/sync`. It needs to be set to the same value on both the hub and the nodes in order to work.
 
 ### plugin.sync.active
 
-The plugin will be update by default but by setting this value to `false` the plugin will be disabled.
+The plugin will run by default, but by setting this value to `false` the plugin will be disabled. You can disable the hub, the nodes or both.

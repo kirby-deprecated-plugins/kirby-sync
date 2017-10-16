@@ -2,7 +2,7 @@
 
 ### Use the latest versions
 
-Make sure you are using at least PHP 7 and Kirby 2.5.5. Also make sure you have the latest version of the plugin.
+Make sure you are using at least PHP 7 and Kirby 2.5.5. Also make sure you have the latest version of this plugin.
 
 ### Make sure the routes work
 
@@ -21,11 +21,10 @@ On the hub, you need to have a config to call the nodes when updating a page. Ma
 ```php
 c::set('plugin.sync.domains', [
     'https://example.com' => [
-        'projects/project-k',
-        'projects'
+        'projects/project-a',
     ],
     'https://anotherdomain.com' => [
-        'some-parent'
+        'projects',
     ]
 ]);
 ```
