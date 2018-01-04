@@ -75,7 +75,11 @@ This plugin is provided "as is" with no guarantee. Use it at your own risk and a
 
 Be sure to try before you buy. Refunds are not supported. Read more in the [license agreement](docs/license.md).
 
+***The purchase button is temporary disabled***
+
+<!--
 [![Pay now](https://www.paypalobjects.com/en_US/SE/i/btn/btn_paynowCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TB7ASKYRXLJD2)
+
 
 ### Single domain license
 
@@ -94,6 +98,7 @@ This license can be used for unlimited number of domains. You are allowed to use
 This license can be used for unlimited plugins on [this Github account](https://github.com/jenstornell) on unlimited domains. You are allowed to use this license for your clients as well.
 
 **Price:** [Pay 100 EUR](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3KJGBSXNPTECL)
+-->
 
 ## Donate
 
